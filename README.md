@@ -6,12 +6,14 @@ Application of automated classification techniques using Machine Learning(ML) an
 According to the Croatian Institute of Public Health, from 2001 to 2015, 7,041 cases (52% of men) were diagnosed, while 5,797 people (also 52% of men) died of malignant brain tumors in the same period. Between 430 and 510 cases of malignant brain tumors are diagnosed annually in Croatia.
 
 
-BRAIN TUMOR CLASSIFICATION 
+
+
+BRAIN TUMOR CLASSIFICATION PROJECT
 
 This is my brain tumor classification project, which analyzes individual slices of MRI scans and predicts whether it is a tumor or not. It predicts among 4 classes: 3 classes of tumor (glioma, meningioma and pituitary tumor), and not a tumor class.
 Dataset was downloaded from kaggle (https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri). It contains images of brain MRI with axial, coronal and sagittal slices which are located in corresponding class directory. I used 80% of data for training and 20% for testing. Training data was split 25% for validation. Images were cropped before loaded into the model (crop_and_save_images.ipynb) and also data augmentation was performed before training because of the small dataset. I used transfer learning with EfficientNetB0 as model with pre-trained weights from imagenet. Model accuracy was very good but it can be better with larger dataset and some more hyperparameter tuning.
 
 
-BRAIN TUMOR SEGMENTATION
+BRAIN TUMOR SEGMENTATION PROJECT
 
 Another part of the project is tumor detection. It is actually a semantic segmentation of brain MRI images so my model will predict possible tumor locations on these images. Dataset was downloaded from kaggle (https://www.kaggle.com/mohamedchakerouari/brain-tumor-dataset). It contains brain tumor images and corresponding ground truth binary masks. Images were preprocessed and loaded into convolutional neural network designed for segmentation tasks called U-net. Because of the class imbalance problem (tumor is relatively small in contrast to large black background in the ground truth images), Jaccard similarity index (IOU) was used as a metric in model training.
