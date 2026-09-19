@@ -9,7 +9,7 @@ According to the Croatian Institute of Public Health, from 2001 to 2015, 7,041 c
 BRAIN TUMOR CLASSIFICATION 
 
 This is my brain tumor classification project, which analyzes individual slices of MRI scans and predicts whether it is a tumor or not. It predicts among 4 classes: 3 classes of tumor (glioma, meningioma and pituitary tumor), and not a tumor class.
-Dataset was downloaded from kaggle (https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri). It contains images of brain MRI with axial, coronal and sagittal slices which are located in corresponding class directory. I used 80% of data for training and 20% for testing. Training data was split 25% for validation. Images were cropped before loaded into the model and also data augmentation was performed because of the small dataset. I used transfer learning with EfficientNetB0 as model with pre-trained weights from imagenet. Model accuracy was very good but it can be better with larger dataset and some more hyperparameter tuning.
+Dataset was downloaded from kaggle (https://www.kaggle.com/sartajbhuvaji/brain-tumor-classification-mri). It contains images of brain MRI with axial, coronal and sagittal slices which are located in corresponding class directory. I used 80% of data for training and 20% for testing. Training data was split 25% for validation. Images were cropped before loaded into the model (crop_and_save_images.ipynb) and also data augmentation was performed before training because of the small dataset. I used transfer learning with EfficientNetB0 as model with pre-trained weights from imagenet. Model accuracy was very good but it can be better with larger dataset and some more hyperparameter tuning.
 
 
 BRAIN TUMOR SEGMENTATION
